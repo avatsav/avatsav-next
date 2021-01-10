@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+    background-color: #47a3f3;
+    color: #fefefe;
+}
+
+html {
+    min-width: 360px;
+    scroll-behavior: smooth;
+}
+
+#__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.metric-card > a {
+    @apply no-underline;
+}
+
+.metric-card > p {
+    @apply my-2;
+}
+
+.step > h3 {
+    @apply my-0;
+}
+
+.prose img {
+    /* Don't apply styles to next/image */
+    @apply m-0;
+}
+
+.prose pre code {
+    @apply md:text-base font-mono leading-normal
+}
+
+.tooltip .tooltip-text {
+    @apply invisible z-50 inline-block text-sm bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-100;
+}
+
+.tooltip:hover .tooltip-text {
+    @apply visible;
+}
+
