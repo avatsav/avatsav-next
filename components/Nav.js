@@ -17,17 +17,12 @@ export default function Nav() {
   
   return (
     <NavContainer>
-      <NavStrip className="flex flex-row justify-center items-center sm:space-x-4 space-x-2">
+      <NavStrip>
         <NavHomeItem/>
         <NavItem href="/blog">Blog</NavItem>
         <NavItem href="/about">About</NavItem>
       </NavStrip>
-      {mounted &&
-      <DarkModeSwitch
-        checked={isDarkMode}
-        onChange={toggleDarkMode}
-        className={"h-5 w-5"}
-      />}
+      {mounted && <NavDarkModeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>}
     </NavContainer>
   )
 }
@@ -72,9 +67,8 @@ function NavHomeItem() {
     'text-white dark:text-black',
     'rounded bg-black dark:bg-gray-100',
   )
-  
   return <Link href="/">
-    <a className="pr-3 sm:p-4 transition-opacity hover:opacity-70">
+    <a className="mr-3 sm:m-4 transition-opacity hover:opacity-70">
       <span className="sr-only">Home</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58"
            className={iconStyle}>
@@ -82,4 +76,12 @@ function NavHomeItem() {
       </svg>
     </a>
   </Link>
+}
+
+function NavDarkModeToggle({ isDarkMode, toggleDarkMode }) {
+  return <DarkModeSwitch
+    checked={isDarkMode}
+    onChange={toggleDarkMode}
+    className="h-5 w-5"
+  />
 }

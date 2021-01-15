@@ -52,6 +52,21 @@ input[type='email'] {
 }
 
 .tooltip:hover .tooltip-text {
-    @apply visible;
+    @apply visible animate-appear-from-left;
+}
+
+.animate-appear-from-left {
+    animation: appear-from-left 0.5s cubic-bezier(0, 0, 0.2, 1) 1;
+}
+
+@keyframes appear-from-left {
+    0% {
+        transform: translatex(-20px);
+        opacity: 0;
+    }
+    75%, 100% {
+        transform: translate(0px);
+        opacity: 1;
+    }
 }
 

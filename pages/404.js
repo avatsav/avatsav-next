@@ -13,20 +13,20 @@ export default function NotFound() {
   return (
     <Container>
       <NextSeo
-        title={ title }
-        canonical={ url }
-        openGraph={ {
+        title={title}
+        canonical={url}
+        openGraph={{
           url: url,
           title: title
-        } }
+        }}
       />
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <div className="flex flex-row items-center tooltip mb-3">
           <Image
             src="/404.svg"
             alt="kenobi"
-            width={ 75 }
-            height={ 75 }
+            width={75}
+            height={75}
             aria-hidden="true"
             className="tooltip"
             priority
